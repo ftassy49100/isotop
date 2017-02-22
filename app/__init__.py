@@ -9,6 +9,7 @@ lm.init_app(app)
 
 from controlers import mainController
 from controlers import createController
+from controlers import qualityFolderController
 from app import models
 from models import qualityFolder
 from models import anomalyType
