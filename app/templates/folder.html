@@ -1,0 +1,6 @@
+{% extends "base.html" %}
+{% block content %}
+
+	<h1> Hello, {{ g.user.firstname}}</h1>
+	<div><p>{{ folder.id }} : <b> Topic: {{ folder.opened_by.firstname }} </b></p></div>
+{% endblock %}

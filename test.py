@@ -1,5 +1,10 @@
 # coding: utf8
 from app import db
-from app.models.user import User
+from app.models.qualityFolder import QualityFolder
+from app.models.anomalyType import AnomalyType
 
-print(User.form_list())
+qf = QualityFolder()
+at = AnomalyType.query.get(2)
+print(at)
+at.quality_folders.append(qf)
+print (at.quality_folders)
