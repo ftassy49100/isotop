@@ -34,3 +34,11 @@ class User(db.Model):
 
     def is_authenticated(self):
         return True
+
+    @staticmethod  # return a list usable for forms
+    def form_list():
+        users = User.query.all()
+        users_list = []
+        for user in users:
+            users_list.append((unicode(user.id), unicode(user.firstname + ' ' + user.lastname)))
+        return users_list

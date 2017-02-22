@@ -1,17 +1,21 @@
 <! -- extend from base layout -->
-{% extends "../base.html" %}
+{% extends "base.html" %}
 
 {%block content %}
 	<h1>New Quality Folder</h1>
 	<form action="" method="post" name="new_folder">
 		{{ form.hidden_tag() }}
 	<p>
-		Please enter your Nickname:<br/>
-		{{ form.nickname(size=80) }}<br/>
+		Opened by:<br/>
+		{{ form.opened_by }}<br/>
+        Anomaly Type: <br/>
+        {{ form.anomaly_type }}
+        Topic: <br/>
+        {{ form.topic }}
+        Report: <br/>
+        {{ form.report }}
 
-	</p>
-	<p>{{ form.remember_me }} Remember Me</p>
-	<p><input type="submit" value="Sign In"></p>
-	</form>
+        <br/><input type="submit" value="Create Folder">
+	</p></form>
 
 {% endblock %}

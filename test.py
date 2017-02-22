@@ -1,7 +1,5 @@
 # coding: utf8
-from app import db, models
-u = models.user.User(firstname=u'François', lastname='Tassy', nickname='ftassy', email='ftassy@matfer.fr')
+from app import db
+from app.models.user import User
 
-db.session.add(u)
-db.session.commit()
-
+print(User.form_list())
