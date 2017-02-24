@@ -6,7 +6,6 @@ import preventiveAction
 import curativeAction
 import correctiveAction
 import topic
-from app.forms import CreateCorrectiveActionForm
 
 
 class QualityFolder(db.Model):
@@ -40,4 +39,4 @@ class QualityFolder(db.Model):
         return '<Dossier %r>' % (self.id)
 
     def forms(self):
-        self.corrective_a_form = CreateCorrectiveActionForm()
+        self.forms = []

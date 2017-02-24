@@ -28,8 +28,10 @@ def see_folder(folder_id):
 @app.route('/folders/<nickname>')
 def folders_of_user(nickname):
     user = User.query.filter_by(nickname=nickname).first()
-    folders = QualityFolder.query.filter_by(opened_by_id=user.id)
+    folders = QualityFolder.query.filter_by(opened_by_id=user.id).all()
     for folder in folders:
+        folder.corrective_a_form = CreateCorrectiveActionForm()
         folder.preventive_a_form = CreatePreventiveActionForm()
+        folder.curative_a_form = CreateCurativeActionForm()
         print folder.preventive_a_form
     return render_template('folder.html', title="Folders of " + user.firstname + ' ' + user.lastname, folders=folders)

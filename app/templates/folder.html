@@ -15,25 +15,40 @@
             <h5>New Curative Action: </h5>
 
         </p>
-    	<h1>New Corrective Action</h1>
-	<form action="" method="post" name="new_corrective_action">
-		{{ folder.preventive_a_form.hidden_tag() }}
-	<p>
-		Pilot:<br/>
-		{{ folder.preventive_a_form.pilote }}<br/>
-        Cause: <br/>
-        {{ folder.preventive_a_form.cause }} <br/>
-        To do: <br/>
-        {{ folder.preventive_a_form.to_do }}<br/>
-        Defined by: <br/>
-        {{ folder.preventive_a_form.defined_by }}<br/>
-        Led by: <br/>
-        {{ folder.preventive_a_form.led_by }}<br/>
-        Set up by:<br/>
-        {{ folder.preventive_a_form.set_up_by }}<br/>
-        <br/><input type="submit" value="Create Folder">
-	</p></form>
-
+        <form action="" method="post" name="new_preventive_action">
+            {{ folder.preventive_a_form.hidden_tag() }}
+        <p>
+            Pilot:<br/>
+                {{ folder.preventive_a_form.pilote }}<br/>
+            Cause: <br/>
+                {{ folder.preventive_a_form.cause }} <br/>
+            To do: <br/>
+                {{ folder.preventive_a_form.to_do }}<br/>
+            Defined by: <br/>
+                {{ folder.preventive_a_form.defined_by }}<br/>
+            Led by: <br/>
+                {{ folder.preventive_a_form.led_by }}<br/>
+            Set up by:<br/>
+                {{ folder.preventive_a_form.set_up_by }}<br/>
+            <br/><input type="submit" value="Create preventive action">
+        </p></form>
+        <form action="" method="post" name="new_corrective_action">
+                {{ folder.corrective_a_form.hidden_tag() }}
+        <p>
+            Pilot:<br/>
+                {{ folder.corrective_a_form.pilote }}<br/>
+            Cause: <br/>
+                {{ folder.corrective_a_form.cause }} <br/>
+            To do: <br/>
+                {{ folder.corrective_a_form.to_do }}<br/>
+            Defined by: <br/>
+                {{ folder.corrective_a_form.defined_by }}<br/>
+            Led by: <br/>
+                {{ folder.corrective_a_form.led_by }}<br/>
+            Set up by:<br/>
+                {{ folder.corrective_a_form.set_up_by }}<br/>
+            <br/><input type="submit" value="Create corrective action">
+        </p></form>
     </div>
     {% endfor %}
 {% endblock %}
