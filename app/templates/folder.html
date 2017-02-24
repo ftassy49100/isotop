@@ -2,5 +2,38 @@
 {% block content %}
 
 	<h1> Hello, {{ g.user.firstname}}</h1>
-	<div><p>{{ folder.id }} : <b> Topic: {{ folder.opened_by.firstname }} </b></p></div>
+    {% for folder in folders %}
+	<div>
+        <p><h4>Folder {{ folder.id }} </h4>
+            <b> Opened By: </b> {{ folder.opened_by.firstname + ' ' + folder.opened_by.lastname }}<b> the</b> {{ folder.opening_date }}<br/>
+            <b> Anomaly Type: </b> {{ folder.anomaly_type.description }} <br/>
+            <b> Topic: </b> {{ folder.topic.name }} <br/>
+            <b> Report: </b>{{ folder.report }}<br/>
+            <b> Risk level:</b> {{ folder.risk_level }} out of 3 <br/>
+            <b> Risk occurrence: </b> {{ folder.risk_occurrence }} out of 3 <br/>
+            <b></b>
+            <h5>New Curative Action: </h5>
+
+        </p>
+    	<h1>New Corrective Action</h1>
+	<form action="" method="post" name="new_corrective_action">
+		{{ folder.preventive_a_form.hidden_tag() }}
+	<p>
+		Pilot:<br/>
+		{{ folder.preventive_a_form.pilote }}<br/>
+        Cause: <br/>
+        {{ folder.preventive_a_form.cause }} <br/>
+        To do: <br/>
+        {{ folder.preventive_a_form.to_do }}<br/>
+        Defined by: <br/>
+        {{ folder.preventive_a_form.defined_by }}<br/>
+        Led by: <br/>
+        {{ folder.preventive_a_form.led_by }}<br/>
+        Set up by:<br/>
+        {{ folder.preventive_a_form.set_up_by }}<br/>
+        <br/><input type="submit" value="Create Folder">
+	</p></form>
+
+    </div>
+    {% endfor %}
 {% endblock %}

@@ -6,6 +6,7 @@ import preventiveAction
 import curativeAction
 import correctiveAction
 import topic
+from app.forms import CreateCorrectiveActionForm
 
 
 class QualityFolder(db.Model):
@@ -34,7 +35,9 @@ class QualityFolder(db.Model):
                                                cascade="all, delete-orphan", lazy="dynamic")
     curative_actions = db.relationship('CurativeAction', backref="quality_folder", cascade="all, delete-orphan",
                                              lazy="dynamic")
-
     ########################
     def __repr__(self):
         return '<Dossier %r>' % (self.id)
+
+    def forms(self):
+        self.corrective_a_form = CreateCorrectiveActionForm()

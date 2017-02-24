@@ -14,9 +14,13 @@ class PreventiveAction(db.Model):
 
     #### Users relationships #####
     pilot_id = db.Column(db.Integer, db.ForeignKey('it_user.id'))
+    pilot_by = relationship('User', foreign_keys=[pilot_id])
     defined_by_id = db.Column(db.Integer, db.ForeignKey('it_user.id'))
+    defined_by_user = relationship('User', foreign_keys=[defined_by_id])
     led_by_id = db.Column(db.Integer, db.ForeignKey('it_user.id'))
+    led_by_user = relationship('User', foreign_keys=[led_by_id])
     set_up_by_id = db.Column(db.Integer, db.ForeignKey('it_user.id'))
+    set_up_by_user = relationship('User', foreign_keys=[set_up_by_id])
     ##############################
 
     cause = db.Column(db.String(800))

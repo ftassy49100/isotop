@@ -31,4 +31,4 @@ def createFolder():
         db.session.commit()
         flash('Folder %s created.' % qf.id)
         redirect(url_for('see_folder', title='Folder ' + str(qf.id), folder=qf))
-    return render_template('create/folder.html', title='New Folder', form=form)
+    return render_template('create/folder_creation.html', title='New Folder', form=form)

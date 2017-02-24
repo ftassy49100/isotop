@@ -1,0 +1,24 @@
+<! -- extend from base layout -->
+{% extends "base.html" %}
+
+{%block content %}
+	<h1>New Corrective Action</h1>
+	<form action="" method="post" name="new_folder">
+		{{ form.hidden_tag() }}
+	<p>
+		Pilot:<br/>
+		{{ folder.corrective_a_form.pilote }}<br/>
+        Cause: <br/>
+        {{ folder.corrective_a_form.cause }} <br/>
+        To do: <br/>
+        {{ folder.corrective_a_form.to_do }}<br/>
+        Defined by: <br/>
+        {{ folder.a_corrective_form.defined_by }}<br/>
+        Led by: <br/>
+        {{ folder.a_corrective_form.led_by }}<br/>
+        Set up by:<br/>
+        {{ folder.a_corrective_form.set_up_by }}<br/>
+        <br/><input type="submit" value="Create Folder">
+	</p></form>
+
+{% endblock %}

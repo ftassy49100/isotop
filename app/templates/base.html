@@ -1,17 +1,18 @@
 <html>
 	<head>
 	{%if title %}
-	<title>{{ title }} - Microblog </title>
+	<title>{{ title }} - ISO-TOP </title>
 	{% else %}
 	<title> Welcome to ISO-TOP </title>
 	{% endif %}
 	</head>
 	<body>
-		<div>Microblog: <a href="{{ url_for('index') }}">Home</a> 
+		<div>ISO-TOP: <a href="{{ url_for('index') }}">Home</a>
 		{% if not user %} <a href="{{ url_for('login') }}">Login</a>
 		{% endif %}
-		{% if g.user.is_authenticated %}
+		{% if session['nickname'] %}
 		<a href="{{ url_for('logout') }}">Logout</a>
+            <a href="{{ url_for('createFolder') }}"> New Folder</a>
 		{% endif %}
 		</div>
 		<hr>

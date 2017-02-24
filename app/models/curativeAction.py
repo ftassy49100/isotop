@@ -11,7 +11,6 @@ class CurativeAction(db.Model):
     accountant_id = db.Column(db.Integer, db.ForeignKey('it_user.id'))
     analysis = db.Column(db.String(800))
     immediate = db.Column(db.Boolean, default=False)
-    topic_id = db.Column(db.Integer, db.ForeignKey('it_topic.id'))
     consequences = db.Column(db.String(800))
     notes = db.Column(db.String(800))
     predicted_date = db.Column(db.DateTime)
